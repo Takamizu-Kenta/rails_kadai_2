@@ -1,0 +1,30 @@
+<h3>ルーム検索結果</h3>
+ 
+    <table>
+      <thead>
+        <tr>
+          <th>ルーム名</th>
+          <th>ルーム紹介</th>
+          <th>料金</th>
+          <th>住所</th>
+          <th>ルーム画像</th>
+          <th>削除</th>
+        </tr>
+      </thead>
+ 
+      <tbody>
+        <% @results.each do |room| %>
+          <tr>
+            <td><%= room.name %></td>
+            <td><%= room.introduction %></td>
+            <td><%= room.price %></td>
+            <td><%= room.address %></td>
+            <td><%= image_tag room.room_image if room.room_image.present? %></td>
+            <td>
+              <%= link_to "削除", room, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+            </td>
+          </tr>
+          
+        <% end %>
+      </tbody>
+    </table>

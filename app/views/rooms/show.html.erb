@@ -5,7 +5,7 @@
         <div class="column is-6-table is-6-desktop is-6-widescreen">
           <div class="box">
         <div calss="columns is-multiline">
-        <%= image_tag @room.room_image if room.room_image.present?%>
+        <%= image_tag @room.room_image if @room.room_image.present? %>
         <h1><%= @room.name %></h1>
         <p><%= @room.introduction %></p>
         <h2><%= @room.address %></h2>

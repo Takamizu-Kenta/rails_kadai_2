@@ -1,4 +1,6 @@
 class RoomsController < ApplicationController
+  before_action :set_search, only: [:index, :search]
+
 
   def index
     @rooms = Room.all
@@ -40,6 +42,16 @@ class RoomsController < ApplicationController
 
   def post
     @room = Room.reservasion
+  end
+
+  def search
+    @results = @search.result
+  end
+
+  private
+
+  def set_search
+    @search = Room.ransack(params[:search])
   end
 
 end
