@@ -1,11 +1,9 @@
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'common' %>
+<% end %>
+
 <div class="top">
   <div class="top_main">
-  </div>
-  <div class="form_fream">
-    <div class="form_area">
-    <p>お部屋を検索</p>
-    <%= render '/shared/form' %>
-    </div>
   </div>
   <div class=area_choice>
   <div class="osusume_title">
@@ -15,25 +13,25 @@
   <ul class="osusume_spot">
     <li class="osusumelist Miyako">
       <a class="osusume_area1" href="#">
-        <%= image_tag('320.png') %>
-        <h3>宮古島</h3>
-        <p>島。</p>
+        <%= image_tag('320.png') %><br>
+        <strong>東京</strong>
+        <p>立ち並ぶオフィス。溢れる人</p>
       </a>
     </li>
 
     <li class="osusumelist Oshima">
       <a class="osusume_area2" href="#">
-        <%= image_tag('320.png') %>
-        <h3>伊豆大島</h3>
-        <p>島。</p>
+        <%= image_tag('320.png') %><br>
+        <strong>埼玉</strong>
+        <p>都会の喧騒から離れた、隠れスポット。</p>
       </a>
     </li>
 
     <li class="osusumelist Yakushima">
       <a class="osusume_area3" href="#">
-        <%= image_tag('320.png') %>
-        <h3>屋久島</h3>
-        <p>島。</p>
+        <%= image_tag('320.png') %><br>
+        <strong>北海道</strong>
+        <p>本州のざわめきから解き放たれたいあなたへ。</p>
       </a>
     </li>
   </ul>

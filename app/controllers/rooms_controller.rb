@@ -45,13 +45,14 @@ class RoomsController < ApplicationController
   end
 
   def search
-    @results = @search.result
+    @results = @q.result
   end
 
   private
+  before_action :set_search
 
   def set_search
-    @search = Room.ransack(params[:search])
+    @q = Room.ransack(params[:q])
   end
 
 end

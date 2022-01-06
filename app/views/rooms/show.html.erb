@@ -4,16 +4,35 @@
       <div class="columns is-centered">
         <div class="column is-6-table is-6-desktop is-6-widescreen">
           <div class="box">
-        <div calss="columns is-multiline">
-        <%= image_tag @room.room_image if @room.room_image.present? %>
-        <h1><%= @room.name %></h1>
-        <p><%= @room.introduction %></p>
-        <h2><%= @room.address %></h2>
+           <div calss="columns is-multiline">
+            <strong><p>＜ルーム詳細＞</p></strong>
+              <section class="section">
+                <div class="columns is-centered">
+                  <div class="column is-narrow">
+                     <%= image_tag @room.room_image if @room.room_image.present? %>
+                        <table class="table">
+                          <tr>
+                            <th>ルーム名</th>
+                            <td><%= @room.name %></td>
+                          </tr>
+                          <tr>
+                            <th>ルーム紹介</th>
+                            <td><%= @room.introduction %></td>
+                          </tr>
+                          <tr>
+                            <th>住所</th>
+                            <td><%= @room.address %></td>
+                          </tr>
+                        </table>
 
-               <div class="actions">
-                  <%= link_to "※ルーム情報一覧に戻る※", :rooms %>
-              </div>
+                        <%= render "shared/reservation"%>
 
+                    <div class="actions">
+                        <%= link_to "※ルーム情報一覧に戻る※", :rooms %>
+                    </div>
+             </section>
+            </div>
+          </div>
          </div>
        </div>
       </div>

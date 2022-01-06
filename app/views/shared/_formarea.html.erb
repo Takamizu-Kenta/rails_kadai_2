@@ -1,19 +1,25 @@
-  <%= search_form_for @search do |f| %>
-        <%= f.search_field :name_cont,class:'search',placeholder: 'で検索' %>
-        <div class="control">
-          <input class="button is-info" data-disable-with="検索" name="commit" type="submit" value="検索" />
-        </div>
-  <% end %>
+<%= search_form_for @q, url: search_rooms_path do |f| %>
+<div class="level-item" style="margin-top: 20px;">
+      <div class="field has-addons">
+        <p class="control">
+            <%= f.search_field :name_cont,class:'input',placeholder: 'ルーム名で検索' %>
+        </p>
+        <p class="control">
+          <%= f.submit class: 'button is-info' %>
+        </p>
+      </div>
+    </div>
+<% end %>
 
-  <%= search_form_for @search, url: search_rooms_path do |f| %>
-        <%= f.search_field :address_cont,class:'search',placeholder: 'エリアで検索' %>
-        <div class="control">
-          <input class="button is-info" data-disable-with="検索" name="commit" type="submit" value="検索" />
-        </div>
-  <% end %>
-
-<%= search_form_for @search, url: search_rooms_path do |f| %>
-    <%= f.search_field :address_cont %>
-    <br>
-    <%= f.submit '検索' %>
+<%= search_form_for @q, url: search_rooms_path do |f| %>
+<div class="level-item" style="margin: 20px 20px;">
+      <div class="field has-addons">
+        <p class="control">
+            <%= f.search_field :address_cont,class:'input',placeholder: 'エリアで検索' %>
+        </p>
+        <p class="control">
+          <%= f.submit class: 'button is-info' %>
+        </p>
+      </div>
+    </div>
 <% end %>

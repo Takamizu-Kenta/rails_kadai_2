@@ -8,12 +8,15 @@ class ApplicationController < ActionController::Base
         devise_parameter_sanitizer.permit(:account_update, keys: [ :avatar])
     end
 
-    before_action :set_search
-
-    def set_search
-      @search = Room.ransack(params[:search])
-  
-      @rooms = @search.result(distinct: true)
-  
+    def search
+      @results = @q.result
     end
+  
+    private
+    before_action :set_search
+  
+    def set_search
+      @q = Room.ransack(params[:q])
+    end
+  
 end

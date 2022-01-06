@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    room = Room.find(params[:room_id])
+    room = Room.find(params[:id])
 
     start_date = Date.parse(reservation_params[:start_date])
           end_date = Date.parse(reservation_params[:end_date])

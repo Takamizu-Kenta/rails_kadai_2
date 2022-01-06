@@ -1,0 +1,11 @@
+<%= form_for [@room, new_room_reservasion_path(:id)] do |f| %>
+  <%= f.hidden_fiield :id, value: @room.id %>
+    <div class="form">
+      <label>チェックイン</label>
+        <%= f.text_field  :start_date,  :class => 'datepicker' %>
+        <label>チェックアウト</label>
+        <%= f.text_field :end_date, :class => 'datepicker' %>
+
+      <%= f.submit "予約する", class: "btn btn-danger btn-wide" %>  
+    </div>
+<% end %>

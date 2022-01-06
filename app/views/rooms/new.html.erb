@@ -9,31 +9,31 @@
               
                   <%= form_with model: @room do |f| %>
 
-                  <div class="field">
-                    <%= f.label :ルーム名, class: "label" %>
-                    <%= f.text_field :name, autofocus: true, autocomplete: "name",class: "input" %>
-                  </div>
-              
-                  <div class="field">
-                    <%= f.label :ルーム紹介, class: "label" %>
-                    <%= f.text_area :introduction, autofocus: true, autocomplete: "introduction",class: "textarea" %>
-                  </div>
-              
-                  <div class="field">
-                    <%= f.label :値段, class: "label" %>
-                    <%= f.text_field :price, autofocus: true, autocomplete: "price",class: "input" %>
-                  </div>
-              
-                  <div class="field">
-                    <%= f.label :住所, class: "label" %>
-                    <%= f.text_field :address, autofocus: true, autocomplete: "address",class: "input" %>
-                  </div>
+                    <div class="field">
+                      <%= f.label :ルーム名, class: "label" %>
+                      <%= f.text_field :name, autofocus: true, autocomplete: "name",class: "input" %>
+                    </div>
+                
+                        <div class="field">
+                          <%= f.label :ルーム紹介, class: "label" %>
+                          <%= f.text_area :introduction, autofocus: true, autocomplete: "introduction",class: "textarea" %>
+                        </div>
+                    
+                            <div class="field">
+                              <%= f.label :値段, class: "label" %>
+                              <%= f.text_field :price, autofocus: true, autocomplete: "price",class: "input" %>
+                            </div>
+                    
+                        <div class="field">
+                          <%= f.label :住所, class: "label" %>
+                          <%= f.text_field :address, autofocus: true, autocomplete: "address",class: "input" %>
+                        </div>
 
-                  <div class="field">
-                    <%= f.label :ルーム画像, class: "label" %>
-                    <%= f.file_field :room_image %>
-                  </div>
-                  
+                    <div class="field">
+                      <%= f.label :ルーム画像, class: "label" %>
+                      <%= f.file_field :room_image %>
+                    </div>
+                    
 
                   <div class="actions">
                      <%= f.submit "登録完了する", class: "button is-link" %><br>
