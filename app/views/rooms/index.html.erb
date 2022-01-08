@@ -1,6 +1,6 @@
   <h3>ルーム情報一覧</h3>
  
-    <table>
+    <table class="table is-striped is-fullwidth">
       <thead>
         <tr>
           <th>ルーム名</th>
@@ -20,7 +20,7 @@
             <td><%= room.introduction %></td>
             <td><%= room.price %></td>
             <td><%= room.address %></td>
-            <td><%= image_tag room.room_image if room.room_image.present? %></td>
+            <td><%= image_tag room.room_image, size: "320x480", alt: "アイコン" if room.room_image.present? %></td>
             <td>
               <%= link_to "詳細", room %>
             </td>
@@ -33,4 +33,4 @@
       </tbody>
     </table>
  
-    <p><%= link_to "ルーム新規登録", :new_room %></p>
+    <%= link_to "ルーム新規登録", :new_room, class: "button is-primary is-fullwidth m-t-10 m-b-10" %>

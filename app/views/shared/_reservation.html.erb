@@ -1,11 +1,56 @@
-<%= form_for [@room, new_room_reservasion_path(:id)] do |f| %>
-  <%= f.hidden_fiield :id, value: @room.id %>
+ <%= form_with url: new_room_reservasion_path(:id) do |f| %>
+  <%= f.hidden_field :id, value: @room.id %>
     <div class="form">
-      <label>チェックイン</label>
-        <%= f.text_field  :start_date,  :class => 'datepicker' %>
+      <label>チェックイン</label><br>
+        <%= f.text_field  :start_date,  readonly: true, placeholder: "イン", class: "input is-primary is-rounded" %>
         <label>チェックアウト</label>
-        <%= f.text_field :end_date, :class => 'datepicker' %>
+        <%= f.text_field :end_date, readonly: true, placeholder: "アウト", class: "input is-primary is-rounded", style: "margin-bottom: 20px;" %>
 
-      <%= f.submit "予約する", class: "btn btn-danger btn-wide" %>  
+      <%= f.submit "予約する", class: "button is-primary btn-wide" %>  
     </div>
+
+    <script>
+  $(function() {
+    $('#reservation_start_date').datepicker({
+      dateFormat: 'dd-mm-yy'
+    });
+    $('#reservation_end_date').datepicker({
+      dateFormat: 'dd-mm-yy'
+    });
+  });
+</script>
 <% end %>
+
+<%= form_with url: new_room_reservasion_path(:id) do |f| %>
+    <div class="field is-horizontal">
+        <div class="field-body">
+            <div class="field">
+            <p class="control is-expanded has-icons-left">
+                <%= f.text_field :start_date, readonly: true, placeholder: "イン", class: "input is-primary is-rounded" %>
+                <span class="icon is-small is-left">
+                <i class="far fa-calendar-alt"></i>
+                </span>
+            </p>
+            </div>
+            <div class="field">
+            <p class="control is-expanded has-icons-left has-icons-right">
+                <%= f.text_field :end_date, readonly: true, placeholder: "アウト", class: "input is-primary is-rounded" %>
+                <span class="icon is-small is-left">
+                <i class="far fa-calendar-alt"></i>
+                </span>
+            </p>
+            </div>
+        </div>
+    </div>
+    <%= f.submit "予約する", class: "button is-danger is-fullwidth m-t-10 m-b-10"  %>
+<% end %>
+<script>
+  $(function() {
+    $('#reservation_start_date').datepicker({
+      dateFormat: 'dd-mm-yy'
+    });
+    $('#reservation_end_date').datepicker({
+      dateFormat: 'dd-mm-yy'
+    });
+  });
+</script>

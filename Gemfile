@@ -66,3 +66,10 @@ gem 'bulma-rails', '~> 0.7.4'
 gem 'bulma-extensions-rails', '~> 1.0.30'
 #ransack
 gem 'ransack'
+#Jquery
+gem 'jquery-rails'
+#detepicker
+gem 'bootstrap3-datetimepicker-rails'
+gem 'momentjs-rails', '>= 2.9.0'
+#jquery_datetimepicker
+gem 'jquery-datetimepicker-rails'
