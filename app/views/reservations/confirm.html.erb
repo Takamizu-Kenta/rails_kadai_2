@@ -24,26 +24,30 @@
                             <td><%= @reservation.people %></td>
                           </tr>
                           <tr>
+                            <th>宿泊日数</th>
+                            <td><%= @reservation.day_gap %></td>
+                          </tr>
+                          <tr>
                             <th>合計金額</th>
-                            <td><%= @reservation.total %></td>
+                            <td><%= @reservation.total_price %></td>
                           </tr>
                         </table>
 
-                         <%= form_with url: reservations_back_path do |f| %>
+                         <%= form_with(model: @reservation, url: reservations_back_path) do |f| %>
                               <div class="form">
-                                  <%= f.hidden_field  :start_date %>
-                                  <%= f.hidden_field :end_date %>
                                   <%= f.hidden_field :people %>
+                                  <%= f.hidden_field :start_date %>
+                                  <%= f.hidden_field :end_date %>
 
                                 <%= f.submit "内容を修正する", class: "button is-primary is-fullwidth m-t-10 m-b-10" %>  
                               </div>
                           <% end %>
 
-                         <%= form_with url: reservations_complete_path do |f| %>
+                         <%= form_with(model: @reservation, url: reservations_complete_path) do |f| %>
                               <div class="form">
-                                  <%= f.hidden_field  :start_date %>
-                                  <%= f.hidden_field :end_date %>
                                   <%= f.hidden_field :people %>
+                                  <%= f.hidden_field :start_date %>
+                                  <%= f.hidden_field :end_date %>
 
                                 <%= f.submit "予約を完了する", class: "button is-danger is-fullwidth m-t-10 m-b-10", style: "margin-top: 20px;" %>  
                               </div>
