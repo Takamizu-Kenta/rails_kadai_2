@@ -1,40 +1,34 @@
 class ReservationsController < ApplicationController
   # before_action :authenticate_user!
-  before_action :permit_params, except: :new
+  before_action except: :new
+
+  def index
+    @reservations = Reservation.all
+  end
 
   def new
     @reservation = Reservation.new
+    @room = Room.find_by(id: params[:room_id])
+    
   end
 
-   def back
-    @reservation = Reservation.new(@attr)
-    render :new
-   end
-
    def confirm
-    @reservation = Reservation.new(@attr)
-    @room = Room.find(params[:id])
+    @reservation = Reservation.new(params.require(:reservation).permit(:people, :start_date, :end_date, :total, :room_id))
+    @room = Room.find_by(id: params[:room_id])
     # if @reservation.invalid?
     #   render :new
     # end
    end
 
    def complete
-    Reservation.create!(@attr)
+    @reservation = current_user.reservations.create(params.require(:reservation).permit(:people, :start_date, :end_date, :total, :room_id))
    end
 
-   private
-
-   def permit_params
-     @attr = params.require('reservation').permit(:people, :start_date, :end_date, :price) 
+   def destroy
+    @reservasion = Reservation.find(params[:id])
+    @reservasion.destroy
+    flash[:notice] = "ご予約を削除しました"
+    redirect_to :reservations
    end
-
-  #  def heya
-  #   start_date = @reservasion.start_date
-  #   end_date = @reservasion.end_date
-  #   days = (end_date - start_date).to_i + 1
-  #   @reservasion.price = rooms.price
-  #   @reservasion.total = rooms.price * days
-  #  end
 
 end

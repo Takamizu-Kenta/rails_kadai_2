@@ -12,12 +12,15 @@
                      
                         <table class="table is-striped is-fullwidth">
                           <tr>
+                         <th>ルームID</th>
+                            <td><%= @reservation.room_id %></td>
+                          </tr>
                             <th>チェックイン</th>
-                            <td><%= @reservation.start_date %></td>
+                            <td><%= @reservation.start_date.to_s(:datetime_jp) %></td>
                           </tr>
                           <tr>
                             <th>チェックアウト</th>
-                            <td><%= @reservation.end_date %></td>
+                            <td><%= @reservation.end_date.to_s(:datetime_jp) %></td>
                           </tr>
                           <tr>
                             <th>宿泊人数</th>
@@ -33,25 +36,21 @@
                           </tr>
                         </table>
 
-                         <%= form_with(model: @reservation, url: reservations_back_path) do |f| %>
-                              <div class="form">
-                                  <%= f.hidden_field :people %>
-                                  <%= f.hidden_field :start_date %>
-                                  <%= f.hidden_field :end_date %>
-
-                                <%= f.submit "内容を修正する", class: "button is-primary is-fullwidth m-t-10 m-b-10" %>  
-                              </div>
-                          <% end %>
-
                          <%= form_with(model: @reservation, url: reservations_complete_path) do |f| %>
                               <div class="form">
                                   <%= f.hidden_field :people %>
                                   <%= f.hidden_field :start_date %>
                                   <%= f.hidden_field :end_date %>
+                                  <%= f.hidden_field :room_id %>
+                                  <%= f.hidden_field :total, :value => @reservation.total_price %>
 
                                 <%= f.submit "予約を完了する", class: "button is-danger is-fullwidth m-t-10 m-b-10", style: "margin-top: 20px;" %>  
                               </div>
                           <% end %>
+
+                       <div class="actions">
+                          <%= link_to "※ルーム詳細に戻る※",room_path(@reservation.room_id),  class: "button is-primary is-fullwidth m-t-10 m-b-10", style: "margin-top: 20px;" %>
+                      </div>
                  </section>
                </div>
              </div>

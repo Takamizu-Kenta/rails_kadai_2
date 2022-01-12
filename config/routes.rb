@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  resources :reservations, only: [:create]
   resources :users
+  resources :reservations
+
   
   root 'top#index'
   get 'reservations/new' #入力
   post 'reservations/confirm' #確認
-  post 'reservations/back' #戻る
   post 'reservations/complete' #予約完了
 
+  get 'rooms/show', to: 'rooms#show'
 
   resources :rooms do
     collection do

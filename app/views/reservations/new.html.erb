@@ -9,7 +9,8 @@
               <section class="section">
                 <div class="columns is-centered">
                   <div class="column is-narrow">
-                  
+                      <label>ルームID</label>
+                          <strong><%= @room.id %></strong><br>
                          <%= form_with(model: @reservation, url: reservations_confirm_path) do |f| %>
                               <div class="form">
                                   <label>人数</label>
@@ -19,12 +20,16 @@
                                   <label>チェックアウト</label>
                                   <%= f.text_field :end_date, class: "input is-primary is-rounded", type: "date", style: "margin-bottom: 20px;" %>
                                   
-                                  <%= f.hidden_field :id %>
-                                  <%= f.hidden_field :price %>
+
+                                  <%= f.hidden_field :room_id, :value => @room.id %>
 
                                 <%= f.submit "確認画面へ", class: "button is-danger is-fullwidth m-t-10 m-b-10" %>  
                               </div>
                           <% end %>
+
+                      <div class="actions">
+                            <%= link_to "※ルーム情報一覧に戻る※", :rooms, class: "button is-primary is-fullwidth m-t-10 m-b-10", style: "margin-top: 20px;" %>
+                      </div>
 
                   </div>
                  </section>

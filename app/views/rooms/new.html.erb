@@ -6,6 +6,7 @@
           <div class="box">
               <div class="field has-text-centered">
                 <strong>＜ルーム登録＞</strong>
+                 <%= render "shared/error", obj: @room %>
               
                   <%= form_with model: @room do |f| %>
 

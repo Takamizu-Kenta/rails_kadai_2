@@ -27,7 +27,6 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'rails-i18n'
 gem 'pry-rails'
 gem 'devise'
 
@@ -73,3 +72,5 @@ gem 'bootstrap3-datetimepicker-rails'
 gem 'momentjs-rails', '>= 2.9.0'
 #jquery_datetimepicker
 gem 'jquery-datetimepicker-rails'
+
+gem 'rails-i18n'

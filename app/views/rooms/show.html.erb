@@ -15,6 +15,9 @@
                           <tr>
                             <%= image_tag @room.room_image, size: "600x800", alt: "アイコン" if @room.room_image.present? %>
                           </tr>
+                          <th>ルームID</th>
+                            <td><%= @room.id %></td>
+                          </tr>
                           <tr>
                             <th>ルーム名</th>
                             <td><%= @room.name %></td>
@@ -34,7 +37,7 @@
                         </table>
 
                         <div class="actions">
-                            <%= link_to "予約画面へ進む", reservations_new_path(@room), class: "button is-danger is-fullwidth m-t-10 m-b-10", style: "margin-top: 20px;" %>
+                            <%= link_to "予約画面へ進む", reservations_new_path(:room_id => @room.id), class: "button is-danger is-fullwidth m-t-10 m-b-10", style: "margin-top: 20px;" %>
                         </div>
 
                         <div class="actions">
