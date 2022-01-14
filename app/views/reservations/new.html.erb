@@ -1,0 +1,45 @@
+<section class="hero is-dark is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-6-table is-6-desktop is-6-widescreen">
+          <div class="box">
+           <div calss="columns is-multiline">
+            <strong><p>＜ルーム予約＞</p></strong>
+              <%= render "shared/error", obj: @reservation %>
+
+              <section class="section">
+                <div class="columns is-centered">
+                  <div class="column is-narrow">
+                      <label>ルームID</label>
+                          <strong><%= @room.id %></strong><br>
+                            <%= form_with(model: @reservation, url: reservations_confirm_path, local: true) do |f| %>
+                              <div class="form">
+                                  <label>人数</label>
+                                  <%= f.text_field :people, class: "input is-primary is-rounded", type: "number" %>
+                                  <label>チェックイン</label><br>
+                                  <%= f.text_field  :start_date, class: "input is-primary is-rounded", type: "date" %>
+                                  <label>チェックアウト</label>
+                                  <%= f.text_field :end_date, class: "input is-primary is-rounded", type: "date", style: "margin-bottom: 20px;" %>
+                                  
+
+                                  <%= f.hidden_field :room_id, :value => @room.id %>
+
+                                <%= f.submit "確認画面へ", class: "button is-danger is-fullwidth m-t-10 m-b-10" %>  
+                              </div>
+                          <% end %>
+
+                      <div class="actions">
+                            <%= link_to "※ルーム情報一覧に戻る※", :rooms, class: "button is-primary is-fullwidth m-t-10 m-b-10", style: "margin-top: 20px;" %>
+                      </div>
+
+                  </div>
+                 </section>
+               </div>
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

@@ -1,0 +1,34 @@
+<div class="top">
+  <div class="top_main"></div>
+    <div class=area_choice>
+      <div class="osusume_title">
+        <p class="is-size-3 has-text-centered has-text-weight-semibold">オススメスポット</p>
+        <p class="is-size-4 has-text-centered has-text-weight-medium">アクセス、立地などから激選したスポット</p>
+      </div>
+        <ul class="osusume_spot">
+          <li class="osusumelist Miyako">
+            <a class="osusume_area1" href="http://localhost:3000/rooms/search?q%5Baddress_cont%5D=%E6%9D%B1%E4%BA%AC&commit=Search">
+              <%= image_tag('tokyo.png') %><br>
+              <strong>東京</strong>
+              <p>立ち並ぶオフィス。溢れる人</p>
+            </a>
+          </li>
+
+          <li class="osusumelist Oshima">
+            <a class="osusume_area2" href="http://localhost:3000/rooms/search?q%5Baddress_cont%5D=%E5%9F%BC%E7%8E%89&commit=Search">
+              <%= image_tag('saitama.png') %><br>
+                  <strong>埼玉</strong>
+                <p>都会の喧騒から離れた、隠れスポット。</p>
+            </a>
+          </li>
+
+          <li class="osusumelist Yakushima">
+            <a class="osusume_area3" href="http://localhost:3000/rooms/search?q%5Baddress_cont%5D=%E5%8C%97%E6%B5%B7%E9%81%93&commit=Search">
+              <%= image_tag('hokkaido.png') %><br>
+              <strong>北海道</strong>
+              <p>本州のざわめきから解き放たれたいあなたへ。</p>
+            </a>
+          </li>
+        </ul>
+  </div>
+</div>
