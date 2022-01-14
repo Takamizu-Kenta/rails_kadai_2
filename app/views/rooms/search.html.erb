@@ -8,6 +8,7 @@
           <th>料金</th>
           <th>住所</th>
           <th>ルーム画像</th>
+          <th>詳細・予約</th>
           <th>削除</th>
         </tr>
       </thead>
@@ -19,7 +20,10 @@
             <td><%= room.introduction %></td>
             <td><%= room.price %></td>
             <td><%= room.address %></td>
-            <td><%= image_tag room.room_image if room.room_image.present? %></td>
+            <td><%= image_tag room.room_image, size: "320x480", alt: "アイコン" if room.room_image.present? %></td>
+            <td>
+              <%= link_to "詳細・予約", room %>
+            </td>
             <td>
               <%= link_to "削除", room, method: :delete, data: { confirm: "本当に削除しますか？" } %>
             </td>

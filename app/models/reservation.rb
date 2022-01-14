@@ -1,5 +1,5 @@
 class Reservation < ApplicationRecord
-  belongs_to :user
+  belongs_to :user,optional: true
   belongs_to :room
 
   def day_gap
@@ -14,8 +14,8 @@ class Reservation < ApplicationRecord
 
   validates :people, presence: true
   validates :people, numericality: {greater_than: 0}
-  validates :start_date_at, presence: true
-  validates :end_date_at, presence: true
+  validates :start_date, presence: true
+  validates :end_date, presence: true
 
   validate :start_end_check
 

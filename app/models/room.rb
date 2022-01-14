@@ -6,6 +6,7 @@ class Room < ApplicationRecord
   validates :name, presence: true
   validates :introduction, presence: true
   validates :price, presence: true
+  validates :price, numericality: true
   validates :address, presence: true
 
   def self.search(search)

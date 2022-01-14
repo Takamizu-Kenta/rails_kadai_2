@@ -15,21 +15,22 @@
                          <th>ルームID</th>
                             <td><%= @reservation.room_id %></td>
                           </tr>
-                            <th>チェックイン</th>
-                            <td><%= @reservation.start_date.to_s(:datetime_jp) %></td>
-                          </tr>
-                          <tr>
-                            <th>チェックアウト</th>
-                            <td><%= @reservation.end_date.to_s(:datetime_jp) %></td>
-                          </tr>
-                          <tr>
-                            <th>宿泊人数</th>
-                            <td><%= @reservation.people %></td>
-                          </tr>
-                          <tr>
-                            <th>宿泊日数</th>
-                            <td><%= @reservation.day_gap %></td>
-                          </tr>
+                              <tr>
+                                <th>チェックイン</th>
+                                <td><%= @reservation.start_date.to_s(:datetime_jp) %></td>
+                              </tr>
+                                <tr>
+                                  <th>チェックアウト</th>
+                                  <td><%= @reservation.end_date.to_s(:datetime_jp) %></td>
+                                </tr>
+                              <tr>
+                                <th>宿泊人数</th>
+                                <td><%= @reservation.people %></td>
+                              </tr>
+                            <tr>
+                              <th>宿泊日数</th>
+                              <td><%= @reservation.day_gap %></td>
+                            </tr>
                           <tr>
                             <th>合計金額</th>
                             <td><%= @reservation.total_price %></td>

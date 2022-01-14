@@ -6,12 +6,14 @@
           <div class="box">
            <div calss="columns is-multiline">
             <strong><p>＜ルーム予約＞</p></strong>
+              <%= render "shared/error", obj: @reservation %>
+
               <section class="section">
                 <div class="columns is-centered">
                   <div class="column is-narrow">
                       <label>ルームID</label>
                           <strong><%= @room.id %></strong><br>
-                         <%= form_with(model: @reservation, url: reservations_confirm_path) do |f| %>
+                            <%= form_with(model: @reservation, url: reservations_confirm_path, local: true) do |f| %>
                               <div class="form">
                                   <label>人数</label>
                                   <%= f.text_field :people, class: "input is-primary is-rounded", type: "number" %>
